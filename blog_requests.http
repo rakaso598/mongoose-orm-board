@@ -10,9 +10,9 @@ POST http://localhost:3001/blogs
 Content-Type: application/json
 
 {
-  "title": "산책안갈거야",
+  "title": "산책안갈거야1",
   "content": "고양이랑요",
-  "author": "yyy"
+  "author": "333"
 }
 
 ###

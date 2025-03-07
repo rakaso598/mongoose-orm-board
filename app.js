@@ -14,10 +14,10 @@ const asyncHandler = (handler) => {
     } catch (e) {
       switch (e.name) {
         case "ValidationError":
-          res.status(400).send({ message: e.message });
+          res.status(400).send({ message: "잘못된 형식의 데이터입니다." });
           break;
         case "CastError":
-          res.status(404).send({ message: e.message });
+          res.status(404).send({ message: "해당 데이터가 존재하지 않습니다." });
           break;
         default:
           res.status(500).send({ message: e.message });
