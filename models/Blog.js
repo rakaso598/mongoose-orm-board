@@ -13,6 +13,7 @@ const BlogSchema = new mongoose.Schema(
     author: {
       type: String,
       required: true,
+      immutable: true, // 수정 불가능한 필드
     },
   },
   {

@@ -21,11 +21,13 @@ DELETE http://localhost:3001/blogs/67caa4d002d2a502e3532194
 
 ###
 
-PATCH http://localhost:3001/blogs/67caa4e802d2a502e3532197
+PATCH http://localhost:3001/blogs/67caad2c4a2bc6e91db7dac2
 Content-Type: application/json
 
 {
-  "title": "제목바꿨어요"
+  "title": "산책33333333321212",
+  "content": "고양이랑요",
+  "author": "4444444"
 }
 
 ###
