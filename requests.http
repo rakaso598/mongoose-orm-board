@@ -1,0 +1,12 @@
+GET http://localhost:3001/blogs
+
+###
+
+POST http://localhost:3001/blogs
+Content-Type: application/json
+
+{
+  "title": "산책안갈거야",
+  "content": "고양이랑요",
+  "author": "yyy"
+}
