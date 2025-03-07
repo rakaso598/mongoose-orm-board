@@ -10,9 +10,8 @@ POST http://localhost:3001/comments
 Content-Type: application/json
 
 {
-  "content": "산책안갈거야3443",
-  "author": "고양이랑요33",
-  "blogId": "yyyzzz33"
+  "content": "안가는댓글인데요",
+  "author": "익명이고요"
 }
 
 ###

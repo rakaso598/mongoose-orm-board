@@ -8,9 +8,7 @@ const CommentSchema = new mongoose.Schema(
     author: {
       type: String,
     },
-    blogId: {
-      type: String,
-    },
+    blogId: { type: mongoose.Schema.Types.ObjectId, ref: "Blog" },
   },
   {
     timestamps: true,
