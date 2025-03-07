@@ -40,12 +40,60 @@ app.get(
   })
 );
 
+app.get(
+  "/blogs/:id",
+  asyncHandler(async (req, res) => {
+    const id = req.params.id;
+    const blog = await Blog.findById(id);
+
+    if (!blog) {
+      res.status(404).send({ message: "Cannot find given id" });
+    }
+
+    res.send(blog);
+  })
+);
+
 app.post(
   "/blogs",
   asyncHandler(async (req, res) => {
     const blog = await Blog.create(req.body);
 
     res.status(201).send(blog);
+  })
+);
+
+app.delete(
+  "/blogs/:id",
+  asyncHandler(async (req, res) => {
+    const id = req.params.id;
+    const blog = await Blog.findByIdAndDelete(id);
+    if (!blog) {
+      res.status(404).send({ message: "cannot find given id" });
+      return;
+    }
+
+    res.sendStatus(204);
+  })
+);
+
+app.patch(
+  "/blogs/:id",
+  asyncHandler(async (req, res) => {
+    const id = req.params.id;
+    const blog = await Blog.findById(id);
+    if (!blog) {
+      res.status(404).setDefaultEncoding({ message: "cannot find given id" });
+      return;
+    }
+
+    Object.keys(req.body).forEach((key) => {
+      blog[key] = req.body[key];
+    });
+
+    await blog.save();
+
+    res.send(blog);
   })
 );
 

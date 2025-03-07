@@ -1,4 +1,8 @@
-GET http://localhost:3001/blogs
+GET http://localhost:3001/blogs?limit=10
+
+###
+
+GET http://localhost:3001/blogs/67caa4d002d2a502e3532194
 
 ###
 
@@ -10,3 +14,19 @@ Content-Type: application/json
   "content": "고양이랑요",
   "author": "yyy"
 }
+
+###
+
+DELETE http://localhost:3001/blogs/67caa4d002d2a502e3532194
+
+###
+
+PATCH http://localhost:3001/blogs/67caa4e802d2a502e3532197
+Content-Type: application/json
+
+{
+  "title": "제목바꿨어요"
+}
+
+###
+
