@@ -32,9 +32,9 @@ const asyncHandler = (handler) => {
 app.get(
   "/blogs",
   asyncHandler(async (req, res) => {
-    const count = req.query.count || 0;
+    const limit = req.query.limit || 0;
 
-    const blogs = await Blog.find().limit(count);
+    const blogs = await Blog.find().limit(limit);
 
     res.send(blogs);
   })
