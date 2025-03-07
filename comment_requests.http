@@ -1,0 +1,32 @@
+GET http://localhost:3001/comments?limit=10
+
+###
+
+GET http://localhost:3001/comments/67caa921adcd76b997938f2a
+
+###
+
+POST http://localhost:3001/comments
+Content-Type: application/json
+
+{
+  "content": "산책안갈거야3443",
+  "author": "고양이랑요33",
+  "blogId": "yyyzzz33"
+}
+
+###
+
+DELETE http://localhost:3001/comments/67caaab51791a2e84009a48e
+
+###
+
+PATCH http://localhost:3001/comments/67caaad41791a2e84009a491
+Content-Type: application/json
+
+{
+  "content": "내용바꿨어요댓글"
+}
+
+###
+

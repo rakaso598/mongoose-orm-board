@@ -97,6 +97,63 @@ app.patch(
   })
 );
 
+app.get(
+  "/comments/:id",
+  asyncHandler(async (req, res) => {
+    const id = req.params.id;
+    const comment = await Comment.findById(id);
+
+    if (!comment) {
+      res.status(404).send({ message: "Cannot find given id" });
+    }
+
+    res.send(comment);
+  })
+);
+
+app.post(
+  "/comments",
+  asyncHandler(async (req, res) => {
+    const comment = await Comment.create(req.body);
+
+    res.status(201).send(comment);
+  })
+);
+
+app.delete(
+  "/comments/:id",
+  asyncHandler(async (req, res) => {
+    const id = req.params.id;
+    const comment = await Comment.findByIdAndDelete(id);
+    if (!comment) {
+      res.status(404).send({ message: "cannot find given id" });
+      return;
+    }
+
+    res.sendStatus(204);
+  })
+);
+
+app.patch(
+  "/comments/:id",
+  asyncHandler(async (req, res) => {
+    const id = req.params.id;
+    const comment = await Comment.findById(id);
+    if (!comment) {
+      res.status(404).setDefaultEncoding({ message: "cannot find given id" });
+      return;
+    }
+
+    Object.keys(req.body).forEach((key) => {
+      comment[key] = req.body[key];
+    });
+
+    await comment.save();
+
+    res.send(comment);
+  })
+);
+
 mongoose.connect(DATABASE_URL).then(() => console.log("Mongoose Connected!"));
 
 app.listen(3001, () => {
