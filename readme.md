@@ -1,7 +1,7 @@
 # 익명 게시판 포스트 작성 및 댓글 기능 만들기
 
 ### 구현 완료한 항목은 [v] 표시합니다.
-### `env.js`의 `DATABASE_URL`은 git ignore.
+### `DATABASE_URL`을 포함한 `env.js`은 git ignored.
 
 
 - **요구사항**:
