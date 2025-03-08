@@ -2,11 +2,14 @@
 
 ### 익명 게시판 포스트 작성 및 댓글 기능 만들기
 
-#### 구현 완료한 부분은 [v] 표시합니다.
+#### 구현 완료한 항목은 [v] 표시합니다.
+#### `env.js`의 `DATABASE_URL`은 git ignore.
+
 
 - **요구사항**:
 
   1. Node.js + Express + Mongoose 활용 [v]
+  2. MongoDB Atlas 클러스터 활용 [v]
 
 - 스키마:
 
