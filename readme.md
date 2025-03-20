@@ -3,6 +3,7 @@
 ### 구현 완료한 항목은 [v] 표시합니다.
 ### `DATABASE_URL`을 포함한 `env.js`은 git ignored.
 
+---
 
 - **요구사항**:
 
